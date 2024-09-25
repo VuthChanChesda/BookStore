@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books Store</title>
+    <!-- link google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Reddit+Sans+Condensed:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link google font -->
+
+    <!-- link bootstrap css  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- link bootstrap css  -->
+
+    <!-- link icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- link icon -->
+
+    <!-- link csss -->
+    <link rel="stylesheet" href="main.css" />
+    <!-- link csss -->
+  </head>
+  <body>
+    <!-- navbars -->
+    <header>
+      <div class="container-fluid bg-white fixed-top">
+        <div class="row pt-1">
+          <div class="col-4 logo">
+            <img
+              src="https://rails-assets-us.bookshop.org/ds/images/logo.041f4577edde0efff6b67907832d4c3dfd52407b.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="col-4">
+            <div id="searchBar" class="position-relative">
+              <form action="">
+                <input
+                  class="form-control search rounded-pill"
+                  type="search"
+                  placeholder="Search Books"
+                  aria-label="Search"
+                />
+
+                <i
+                  class="fa-solid fa-magnifying-glass bi bi-search position-absolute"
+                  style="
+                    color: #63e6be;
+                    top: 50%;
+                    right: 20px;
+                    transform: translateY(-50%);
+                  "
+                ></i>
+              </form>
+            </div>
+          </div>
+          <div class="col-4">
+            <ul id="link-item" class="">
+              <li>Sign UP</li>
+              <li>Sign In</li>
+              <i class="fa-solid fa-cart-shopping" style="color: #63e6be"></i>
+            </ul>
+          </div>
+        </div>
+
+        <div id="listCard" class="text-center">
+          <div class="listCard-item">
+            <ul class="d-flex justify-content-center">
+              <li><a href="">Gift Card</a></li>
+              <li>
+                <div id="dropdownID" class="dropdown d-inline-block">
+                  <a
+                    href=""
+                    class="dropdown-toggle"
+                    id="dropdownMenuButton"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                    >Spacial Offers</a
+                  >
+                  <ul
+                    id="dropdown-list"
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <div class="container-fluid d-flex">
+                      <div>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >See all Special Offers</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Great New Title from DK-15%</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Get 15% off these manga if you like these Netflix
+                            Shows!</a
+                          >
+                        </li>
+                        <li>
+                          <a href="">Get 15% off STKILLER Picture Books!</a>
+                        </li>
+                        <li><a href="">Get 10% off these Disney Books!</a></li>
+                      </div>
+                      <div>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Get Books on a Feeling With 10% off Epic Read!</a
+                          >
+                        </li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+
+              <li><a href="">New Books</a></li>
+              <li><a href="">Best Seller</a></li>
+              <li>
+                <div id="dropdownID" class="dropdown d-inline-block">
+                  <a
+                    href=""
+                    class="dropdown-toggle"
+                    id="dropdownMenuButton"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                    >Fiction</a
+                  >
+                  <ul
+                    id="dropdown-list"
+                    class="dropdown-menu custom-dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <div class="container-fluid d-flex">
+                      <div class="col-6">
+                        <li><a class="dropdown-item" href="#">Fiction</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Manga</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Horror</a>
+                        </li>
+                        <li><a href="">Histroycal Fiction</a></li>
+                        <li><a href="">Comics & Graphic Novels</a></li>
+                        <li><a href="">Fantasy</a></li>
+                      </div>
+                      <div class="col-6">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Literature Fiction</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Science Fiction</a>
+                        </li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+
+              <li><a href="">Nonfiction</a></li>
+              <li><a href="">ya</a></li>
+              <li><a href="">Kid</a></li>
+              <li><a href="">Game and Puzzles</a></li>
+            </ul>
+          </div>
+          <div class="raised-banner">
+            <p>Free Shipping on Orders Over <span>%35</span></p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- navbar -->
+
+    <main>
+      <!-- pano -->
+      <div class="container-fluid px-0 pano">
+        <img
+          class="img-fluid"
+          src="https://images-production.bookshop.org/spree/promo_banner_slides/desktop_images/301/original/DD_multi_bookshop_hero_2048x600.jpg?1725373576"
+          alt=""
+        />
+      </div>
+      <!-- pano -->
+
+      <!-- slide-img -->
+      <div class="container mt-2 mb-5">
+        <div class="miniLogoWithText">
+          <p id="text">New books</p>
+          <img
+            src="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
+            alt=""
+          />
+          <a href="">by  BookShop.Org</a>
+        </div>
+
+        <div class="containers">
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781250343185.jpg?height=250&v=v2-e7c00658ac4963558f17773427b2c313"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780316573290.jpg?height=250&v=v2-940418acbabc5cafdb326809b79642cf"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781982116521.jpg?height=250&v=v2-5442113496db64e8422ab6ef8e27c832"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593489277.jpg?height=250&v=v2-097ec31c8144577570ce3dfb7f77c3d2"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781538741092.jpg?height=250&v=v2-4af00e9c600241a638f5a3d508504c38"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9798886741940.jpg?height=250&v=v2-84fe661035b6c8a5fa2e81e32bb272e9"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781419770531.jpg?height=250&v=v2-023ffdd493f474641e89c99e14a7effa"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781668000267.jpg?height=250&v=v2-f4dc65bc1c3ce9d5f050bdc9ed0e3a6b"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- slide-img -->
+
+      <!-- slide-img -->
+      <div class="container mt-5">
+        <div class="miniLogoWithText">
+          <p id="text">Most Anticipated Books of Fall 2024</p>
+          <img
+            src="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
+            alt=""
+          />
+          <a href="">by  BookShop.Org</a>
+        </div>
+        <div class="containers">
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593099612.jpg?height=250&v=v2"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593545867.jpg?height=250&v=v2"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593438862.jpg?height=250&v=v2-cc2e072c37c73a649a563b7a5fb2ad12"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593816967.jpg?height=250&v=v2-724a57b3f93da29974b0404e2f67dc45"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593436738.jpg?height=250&v=v2"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593545867.jpg?height=250&v=v2"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593438862.jpg?height=250&v=v2-cc2e072c37c73a649a563b7a5fb2ad12"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9780593816967.jpg?height=250&v=v2-724a57b3f93da29974b0404e2f67dc45"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- slide-img -->
+
+      <!-- <section class="container mt-5">
+        <div class="d-flex">
+
+       
+          
+          <div class="card" id="promotion">
+             <div class="d-flex">
+            <div>
+          
+
+            <img
+            class="card-img px-3 pt-3 img-thumbnail"
+            src="https://images-us.bookshop.org/ingram/9781250368294.jpg?height=250&v=v2-08c93154a5e7b3f270a388b111ddf262"
+            alt=""
+          />
+          <img
+          class="card-img px-3 pt-3 img-thumbnail"
+          src="https://images-us.bookshop.org/ingram/9781250368294.jpg?height=250&v=v2-08c93154a5e7b3f270a388b111ddf262"
+          alt=""
+        />
+
+
+         
+
+          </div>
+          
+
+            <div class="">
+              <h3 class="card-title pt-5">Discover the<br>New York Times<br>bestselling<br>rmaincetasy<br>serise,crowns of<br>Nyaxia</h3>
+            </div>
+          </div>
+
+
+          </div>
+
+      
+
+         
+
+          
+        </div>
+      </section> -->
+
+      <!-- big wrap img -->
+      <section class="container mt-5">
+        <h2>Funny or Uplifting Books to Read Right Now</h2>
+        <div class="miniLogoWithText">
+          <img
+            src="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
+            alt=""
+          />
+          <a href="">by  BookShop.Org</a>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around">
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780385343497.jpg?height=250&v=v2-dc337d98fb4b6297995ec923e2a614a5"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People</p>
+              <p>Isle MCElroy</p>
+              <p>16$</p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780156031646.jpg?height=250&v=v2"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People</p>
+              <p>Isle MCElroy</p>
+              <p>16$</p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9781616207922.jpg?height=250&v=v2"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People</p>
+              <p>Isle MCElroy</p>
+              <p>16$</p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780143039594.jpg?height=250&v=v2"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People</p>
+              <p>Isle MCElroy</p>
+              <p>16$</p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780062645111.jpg?height=250&v=v2"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People</p>
+              <p>Isle MCElroy</p>
+              <p>16$</p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780062413727.jpg?height=250&v=v2"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People</p>
+              <p>Isle MCElroy</p>
+              <p>16$</p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780061358302.jpg?height=250&v=v2"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People</p>
+              <p>Isle MCElroy</p>
+              <p>16$</p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780062289988.jpg?height=250&v=v2"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People</p>
+              <p>Isle MCElroy</p>
+              <p>16$</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- big wrap img -->
+
+      <!-- banner -->
+      <section class="banner">
+        <div class="container-fluid d-flex justify-content-center py-2">
+          <div class="mt-5">
+            <h3>Sign up for our Newsletter</h3>
+            <p>Tell us what books you love.</p>
+          </div>
+          <div class="text-center mx-5 mt-5">
+            <button id="banner-btn" class="btn">Sign In</button>
+          </div>
+        </div>
+      </section>
+      <!-- banner -->
+    </main>
+
+    
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
