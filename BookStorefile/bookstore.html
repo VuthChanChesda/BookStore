@@ -11,16 +11,22 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Reddit+Sans+Condensed:wght@200..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
     <!-- link google font -->
 
-    <!-- link bootstrap css  -->
+    <!-- Bootstrap 5 CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
     />
-    <!-- link bootstrap css  -->
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
     <!-- link icon -->
     <link
@@ -35,159 +41,252 @@
     <!-- link csss -->
     <link rel="stylesheet" href="main.css" />
     <!-- link csss -->
+    <link
+      rel="icon"
+      href="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
+    />
   </head>
   <body>
     <!-- navbars -->
     <header>
-      <div class="container-fluid bg-white fixed-top">
-        <div class="row pt-1">
-          <div class="col-4 logo">
+      <!-- Main Navbar (First Row) -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- Brand Logo -->
+          <a class="navbar-brand flex-grow-1 ps-4 logo" href="#">
             <img
+              width="200"
               src="https://rails-assets-us.bookshop.org/ds/images/logo.041f4577edde0efff6b67907832d4c3dfd52407b.svg"
               alt=""
             />
+          </a>
+
+          <!-- Search Bar -->
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <form class="d-flex mx-auto flex-grow-1" style="width: 10%">
+              <input
+                class="form-control me-2 search-bar"
+                type="search"
+                placeholder="Search for anything"
+                aria-label="Search"
+                style="border-radius: 25px"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
           </div>
 
-          <div class="col-4">
-            <div id="searchBar" class="position-relative">
-              <form action="">
-                <input
-                  class="form-control search rounded-pill"
-                  type="search"
-                  placeholder="Search Books"
-                  aria-label="Search"
-                />
-
-                <i
-                  class="fa-solid fa-magnifying-glass bi bi-search position-absolute"
-                  style="
-                    color: #63e6be;
-                    top: 50%;
-                    right: 20px;
-                    transform: translateY(-50%);
-                  "
-                ></i>
-              </form>
-            </div>
-          </div>
-          <div class="col-4">
-            <ul id="link-item" class="">
-              <li>Sign UP</li>
-              <li>Sign In</li>
-              <i class="fa-solid fa-cart-shopping" style="color: #63e6be"></i>
-            </ul>
+          <div
+            class="d-flex flex-grow-1 justify-content-center ms-5 link-sign-in-up"
+          >
+            <a href="/signUpPage/signUP.html" class="nav-link">Sign Up</a>
+            <a href="/LoginPageFile/login.html" class="nav-link ms-3"
+              >Sign In</a
+            >
+            <a href="" class="nav-link ms-3"
+              ><i class="fa-solid fa-cart-shopping" style="color: #63e6be"></i
+            ></a>
           </div>
         </div>
+      </nav>
 
-        <div id="listCard" class="text-center">
-          <div class="listCard-item">
-            <ul class="d-flex justify-content-center">
-              <li><a href="">Gift Card</a></li>
-              <li>
-                <div id="dropdownID" class="dropdown d-inline-block">
+      <!-- Second Row (Categories List) with Offcanvas -->
+      <div class="navbar" id="second-link-nav-bar">
+        <div class="container">
+          <button
+            class="navbar-toggler d-lg-none ms-3"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <form
+            class="d-flex mx-auto flex-grow-1 d-lg-none form-input-second-row"
+          >
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search for anything"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+
+          <div
+            class="offcanvas offcanvas-start full-screen-offcanvas"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                BookStore
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Offcanvas Categories List -->
+              <ul
+                class="flex-column navbar-nav justify-content-end flex-grow-1 pe-3"
+                id="offcanvas-body"
+              >
+                <li class="nav-item">
+                  <a class="nav-link" href="#newBook">New Book</a>
+                </li>
+                <li class="nav-item dropdown dropdown-on-small-screen">
                   <a
-                    href=""
-                    class="dropdown-toggle"
-                    id="dropdownMenuButton"
-                    data-mdb-toggle="dropdown"
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
                     aria-expanded="false"
+                    id="dropdownMenuButton"
                     >Spacial Offers</a
                   >
                   <ul
-                    id="dropdown-list"
                     class="dropdown-menu"
                     aria-labelledby="dropdownMenuButton"
                   >
-                    <div class="container-fluid d-flex">
-                      <div>
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            >See all Special Offers</a
-                          >
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            >Great New Title from DK-15%</a
-                          >
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            >Get 15% off these manga if you like these Netflix
-                            Shows!</a
-                          >
-                        </li>
-                        <li>
-                          <a href="">Get 15% off STKILLER Picture Books!</a>
-                        </li>
-                        <li><a href="">Get 10% off these Disney Books!</a></li>
-                      </div>
-                      <div>
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            >Get Books on a Feeling With 10% off Epic Read!</a
-                          >
-                        </li>
-                      </div>
-                    </div>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >See all Special Offers</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Great New Title from DK-15%</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="" class="dropdown-item"
+                        >Get 15% off STKILLER Picture Books!</a
+                      >
+                    </li>
+                    <li>
+                      <a href="" class="dropdown-item"
+                        >Get 10% off these Disney Books!</a
+                      >
+                    </li>
                   </ul>
-                </div>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Tales for kids</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Paperback</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Fiction</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Music</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sponsor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Funny Book</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- reugalr categories visible on large screens -->
+          <div
+            class="d-none d-lg-flex justify-content-center flex-grow-1 listCard-item"
+            id="link-nav-bar-on-big-screen"
+          >
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#newBook">New Book</a>
               </li>
 
-              <li><a href="">New Books</a></li>
-              <li><a href="">Best Seller</a></li>
-              <li>
-                <div id="dropdownID" class="dropdown d-inline-block">
-                  <a
-                    href=""
-                    class="dropdown-toggle"
-                    id="dropdownMenuButton"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                    >Fiction</a
-                  >
-                  <ul
-                    id="dropdown-list"
-                    class="dropdown-menu custom-dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <div class="container-fluid d-flex">
-                      <div class="col-6">
-                        <li><a class="dropdown-item" href="#">Fiction</a></li>
-                        <li>
-                          <a class="dropdown-item" href="#">Manga</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Horror</a>
-                        </li>
-                        <li><a href="">Histroycal Fiction</a></li>
-                        <li><a href="">Comics & Graphic Novels</a></li>
-                        <li><a href="">Fantasy</a></li>
-                      </div>
-                      <div class="col-6">
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            >Literature Fiction</a
-                          >
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">Science Fiction</a>
-                        </li>
-                      </div>
-                    </div>
-                  </ul>
-                </div>
+              <li class="nav-item dropdown dropdown-on-big-screen">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="dropdownMenuButton"
+                  >Spacial Offers</a
+                >
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton"
+                  id="dropdown-menu"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">See all Special Offers</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Great New Title from DK-15%</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Get 15% off these manga if you like these Netflix
+                      Shows!</a
+                    >
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-item"
+                      >Get 15% off STKILLER Picture Books!</a
+                    >
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-item"
+                      >Get 10% off these Disney Books!</a
+                    >
+                  </li>
+                </ul>
               </li>
 
-              <li><a href="">Nonfiction</a></li>
-              <li><a href="">ya</a></li>
-              <li><a href="">Kid</a></li>
-              <li><a href="">Game and Puzzles</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#TalesForKid">Tales for kids</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#paperback">Paperback</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Fiction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#container-music">Music</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#sponsor">Sponsor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#funnyBook">Funny Book</a>
+              </li>
             </ul>
           </div>
-          <div class="raised-banner">
-            <p>Free Shipping on Orders Over <span>%35</span></p>
-          </div>
         </div>
+      </div>
+
+      <div
+        class="text-center flex-grow-1 d-sm-none d-lg-block pt-2 text-promotion"
+      >
+        <p>Buy 30$ worth of books get <span>30% </span>off right now</p>
       </div>
     </header>
     <!-- navbar -->
@@ -204,14 +303,14 @@
       <!-- pano -->
 
       <!-- slide-img -->
-      <div class="container mt-2 mb-5">
+      <div class="container mt-2 mb-5" id="newBook">
         <div class="miniLogoWithText">
           <p id="text">New books</p>
           <img
             src="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
             alt=""
           />
-          <a href="">by  BookShop.Org</a>
+          <a href="#">by BookShop.Org</a>
         </div>
 
         <div class="containers">
@@ -268,61 +367,63 @@
       <!-- slide-img -->
 
       <!-- slide-img -->
-      <div class="container mt-5">
+      <div class="container mt-5" id="TalesForKid">
         <div class="miniLogoWithText">
-          <p id="text">Most Anticipated Books of Fall 2024</p>
+          <p id="text">
+            Empowering tales for kids by Newbery Medalist Linda Sue Park
+          </p>
           <img
-            src="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
+            src="https://images-production.bookshop.org/spree/affiliate_profiles/profile_images/6018/original/LxP_BookshopButton.jpg?1588970608"
             alt=""
           />
-          <a href="">by  BookShop.Org</a>
+          <a href="#">by HarperCollins Children's Books</a>
         </div>
         <div class="containers">
           <div class="box">
             <img
-              src="https://images-us.bookshop.org/ingram/9780593099612.jpg?height=250&v=v2"
+              src="https://images-us.bookshop.org/ingram/9780063346291.jpg?height=250&v=v2-c5b1c550033203bc102df813a65926d9"
               alt=""
             />
           </div>
           <div class="box">
             <img
-              src="https://images-us.bookshop.org/ingram/9780593545867.jpg?height=250&v=v2"
+              src="https://images-us.bookshop.org/ingram/9780547577319.jpg?height=250&v=v2"
               alt=""
             />
           </div>
           <div class="box">
             <img
-              src="https://images-us.bookshop.org/ingram/9780593438862.jpg?height=250&v=v2-cc2e072c37c73a649a563b7a5fb2ad12"
+              src="https://images-us.bookshop.org/ingram/9780358454632.jpg?height=250&v=v2"
               alt=""
             />
           </div>
           <div class="box">
             <img
-              src="https://images-us.bookshop.org/ingram/9780593816967.jpg?height=250&v=v2-724a57b3f93da29974b0404e2f67dc45"
+              src="https://images-us.bookshop.org/ingram/9780547534268.jpg?height=250&v=v2"
               alt=""
             />
           </div>
           <div class="box">
             <img
-              src="https://images-us.bookshop.org/ingram/9780593436738.jpg?height=250&v=v2"
+              src="https://images-us.bookshop.org/ingram/9780547722399.jpg?height=250&v=v2"
               alt=""
             />
           </div>
           <div class="box">
             <img
-              src="https://images-us.bookshop.org/ingram/9780593545867.jpg?height=250&v=v2"
+              src="https://images-us.bookshop.org/ingram/9780544935211.jpg?height=250&v=v2"
               alt=""
             />
           </div>
           <div class="box">
             <img
-              src="https://images-us.bookshop.org/ingram/9780593438862.jpg?height=250&v=v2-cc2e072c37c73a649a563b7a5fb2ad12"
+              src="https://images-us.bookshop.org/ingram/9780358697275.jpg?height=250&v=v2-576b30831c5ae361628429a744824b26"
               alt=""
             />
           </div>
           <div class="box">
             <img
-              src="https://images-us.bookshop.org/ingram/9780593816967.jpg?height=250&v=v2-724a57b3f93da29974b0404e2f67dc45"
+              src="https://images-us.bookshop.org/ingram/9780547076713.jpg?height=250&v=v2"
               alt=""
             />
           </div>
@@ -330,58 +431,300 @@
       </div>
       <!-- slide-img -->
 
-      <!-- <section class="container mt-5">
-        <div class="d-flex">
-
-       
-          
-          <div class="card" id="promotion">
-             <div class="d-flex">
-            <div>
-          
-
-            <img
-            class="card-img px-3 pt-3 img-thumbnail"
-            src="https://images-us.bookshop.org/ingram/9781250368294.jpg?height=250&v=v2-08c93154a5e7b3f270a388b111ddf262"
-            alt=""
-          />
-          <img
-          class="card-img px-3 pt-3 img-thumbnail"
-          src="https://images-us.bookshop.org/ingram/9781250368294.jpg?height=250&v=v2-08c93154a5e7b3f270a388b111ddf262"
-          alt=""
-        />
-
-
-         
-
-          </div>
-          
-
-            <div class="">
-              <h3 class="card-title pt-5">Discover the<br>New York Times<br>bestselling<br>rmaincetasy<br>serise,crowns of<br>Nyaxia</h3>
-            </div>
-          </div>
-
-
-          </div>
-
-      
-
-         
-
-          
-        </div>
-      </section> -->
-
       <!-- big wrap img -->
-      <section class="container mt-5">
-        <h2>Funny or Uplifting Books to Read Right Now</h2>
+      <section class="container mt-5" id="paperback">
+        <h2>New Books in Paperback</h2>
         <div class="miniLogoWithText">
           <img
             src="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
             alt=""
           />
-          <a href="">by  BookShop.Org</a>
+          <a href="#">by BookShop.Org</a>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around">
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9781646144655.jpg?height=250&v=v2-2752734f1eedc0b8bcbaf1b4928a6f60"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>Evil Eye</p>
+              <p>Isle MCElroy</p>
+              <p>16$ <span>$23.33</span></p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780062938817.jpg?height=250&v=v2-18619ec8f82735b55a4dd1263ccb56df"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>
+                The Free People's <br />
+                Village
+              </p>
+              <p>Sim Kren</p>
+              <p>16$ <span>$20.24</span></p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780062987914.jpg?height=250&v=v2-837d405502dac587d340c06fb7d16e54"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>Brookyln crime Novel</p>
+              <p>Isle MCElroy</p>
+              <p>16$ <span>$27.22</span></p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780063265349.jpg?height=250&v=v2-926ccacbdf18c299e80ae654a8d059d3"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>Juila</p>
+              <p>Isle MCElroy</p>
+              <p>18$ <span>$23.99</span></p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780063283763.jpg?height=250&v=v2-c7a39a79314bacc7ca5c4721b326fe3b"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>People Colldie</p>
+              <p>Isle MCElroy</p>
+              <p>16$ <span>$20.09</span></p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9781538706503.jpg?height=250&v=v2-e0f3a2797c5c41ea94a1018963735889"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>Leslie F*cking Jones</p>
+              <p>Isle MCElroy</p>
+              <p>19$ <span>$22.99</span></p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9780063394230.jpg?height=250&v=v2-f943463b89dd826c57097cd27664ac56"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>Of Time and Turtles</p>
+              <p>
+                sy Montgomery and <br />
+                Matt Patterson
+              </p>
+              <p>19$ <span>$28.00</span></p>
+            </div>
+          </div>
+
+          <div id="card_img_book" class="d-flex align-items-center">
+            <div class="img_wrap">
+              <img
+                class="img-fluid"
+                src="https://images-us.bookshop.org/ingram/9781324095613.jpg?height=250&v=v2-df5f42f3cf9663b5405dea19049cbb1a"
+                alt=""
+              />
+            </div>
+            <div class="ps-2">
+              <p>The Deadline: Essays</p>
+              <p>Chesda</p>
+              <p>15$ <span>$20.22</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- big wrap img -->
+
+      <!-- slide-img -->
+      <div class="container mt-5" id="container-music">
+        <div class="miniLogoWithText">
+          <p id="text">
+            What's your taste in music? Find out with this musical menu of
+            books, sponsored by Taste in Music: Eating on Tour with Indie
+            Musicians
+          </p>
+          <img
+            src="https://images-production.bookshop.org/spree/curators/avatars/172/thumb/Chronicle_Books.jpg?1723749601"
+            alt=""
+          />
+          <a href="#">by Chronicle Books</a>
+        </div>
+        <div class="containers">
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781797224572.jpg?height=250&v=v2-1b2b2f0a0674609009292f7265196e65"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781797220994.jpg?height=250&v=v2"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781797220017.jpg?height=250&v=v2-a3799fad5f6f2de310f9ce64374844b3"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781797222288.jpg?height=250&v=v2-96dea4f3cfa868223915b5acc9a2f30b"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781797224732.jpg?height=500&v=v2-6f5097209325a2dd85437df27c39fc24"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781797211787.jpg?height=250&v=v2"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781797217222.jpg?height=250&v=v2-cca5cf336588764e44baed6e0352035f"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://images-us.bookshop.org/ingram/9781797233383.jpg?height=250&v=v2-c3f19b3152ebd7a9c7ced1a4c4f83869"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- slide-img -->
+
+      <!-- promotion pic -->
+      <section
+        class="container py-5 d-lg-flex justify-content-around"
+        id="sponsor"
+      >
+        <div class="card" id="cards">
+          <div class="row">
+            <div class="col-6 img-card">
+              <img
+                src="https://images-us.bookshop.org/ingram/9781250367785.jpg?height=250&v=v2-6d87911b7864f11dab66fd8c8c79bf2b"
+                alt=""
+              />
+
+              <img
+                src="https://images-us.bookshop.org/ingram/9781250368294.jpg?height=250&v=v2-08c93154a5e7b3f270a388b111ddf262"
+                alt=""
+              />
+            </div>
+
+            <div class="col-6">
+              <div class="card-body">
+                <div class="card-body-pro-logo">
+                  <img
+                    class="card-img"
+                    src="https://images-production.bookshop.org/spree/curators/avatars/175/thumb/Screenshot_2024-09-18_at_10.15.31%E2%80%AFAM.png?1726668992"
+                    alt=""
+                    style="width: 40px"
+                  />
+                  <p><a href="">Bramble</a></p>
+                </div>
+                <p class="card-text" id="card-text">
+                  Discover the <br />
+                  New York Times <br />
+                  Best selling romantasy<br />
+                  series , Crown of Nyaxia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="cards">
+          <div class="row">
+            <div class="col-6 img-card">
+              <img
+                src="https://images-us.bookshop.org/ingram/9781638931249.jpg?height=250&v=v2-186a41d54f34b2eaf67c52cebf0c027a"
+                alt=""
+              />
+
+              <img
+                src="https://images-us.bookshop.org/ingram/9781638930969.jpg?height=250&v=v2-6454ed2af3a82bf147f548c37d006b79"
+                alt=""
+              />
+            </div>
+
+            <div class="col-6">
+              <div class="card-body" id="card-body-img">
+                <div class="card-body-pro-logo">
+                  <img
+                    class="card-img"
+                    src="https://images-production.bookshop.org/spree/curators/avatars/174/thumb/zando-icon_light-svg.png?1726603429"
+                    alt=""
+                    style="width: 40px"
+                  />
+                  <p><a href="#">zendo</a></p>
+                </div>
+
+                <p class="card-text" id="card-text">
+                  The Dr. Wren Muller series
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- promotion pic -->
+
+      <!-- big wrap img -->
+      <section class="container mt-5">
+        <h2 id="funnyBook">Funny or Uplifting Books to Read Right Now</h2>
+        <div class="miniLogoWithText">
+          <img
+            src="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
+            alt=""
+          />
+          <a href="">by BookShop.Org</a>
         </div>
 
         <div class="d-flex flex-wrap justify-content-around">
@@ -394,9 +737,9 @@
               />
             </div>
             <div class="ps-2">
-              <p>People</p>
+              <p>A Haunting on the Hill</p>
               <p>Isle MCElroy</p>
-              <p>16$</p>
+              <p>16$ <span>$22.00</span></p>
             </div>
           </div>
 
@@ -409,9 +752,9 @@
               />
             </div>
             <div class="ps-2">
-              <p>People</p>
+              <p>Rental House</p>
               <p>Isle MCElroy</p>
-              <p>16$</p>
+              <p>16$ <span>$33.00</span></p>
             </div>
           </div>
 
@@ -424,8 +767,8 @@
               />
             </div>
             <div class="ps-2">
-              <p>People</p>
-              <p>Isle MCElroy</p>
+              <p>Reel</p>
+              <p>Lux Marcory</p>
               <p>16$</p>
             </div>
           </div>
@@ -439,9 +782,9 @@
               />
             </div>
             <div class="ps-2">
-              <p>People</p>
+              <p>Like Mother, Like Mother</p>
               <p>Isle MCElroy</p>
-              <p>16$</p>
+              <p>16$ <span>$22.50</span></p>
             </div>
           </div>
 
@@ -454,9 +797,9 @@
               />
             </div>
             <div class="ps-2">
-              <p>People</p>
+              <p>The Emperor of Gladness</p>
               <p>Isle MCElroy</p>
-              <p>16$</p>
+              <p>16$ <span>$23.29</span></p>
             </div>
           </div>
 
@@ -469,9 +812,9 @@
               />
             </div>
             <div class="ps-2">
-              <p>People</p>
+              <p>America Fantastica</p>
               <p>Isle MCElroy</p>
-              <p>16$</p>
+              <p>16$ <span>$20.88</span></p>
             </div>
           </div>
 
@@ -484,9 +827,9 @@
               />
             </div>
             <div class="ps-2">
-              <p>People</p>
+              <p>Everything Is Not Enough</p>
               <p>Isle MCElroy</p>
-              <p>16$</p>
+              <p>16$ <span>$22.50</span></p>
             </div>
           </div>
 
@@ -499,9 +842,9 @@
               />
             </div>
             <div class="ps-2">
-              <p>People</p>
-              <p>Isle MCElroy</p>
-              <p>16$</p>
+              <p>The Museum of Failures</p>
+              <p>Thrity Umrigar</p>
+              <p>16$ <span>$28.00</span></p>
             </div>
           </div>
         </div>
@@ -509,36 +852,108 @@
       <!-- big wrap img -->
 
       <!-- banner -->
-      <section class="banner">
-        <div class="container-fluid d-flex justify-content-center py-2">
+      <section class="banner mt-5">
+        <div class="container-fluid d-lg-flex justify-content-center">
           <div class="mt-5">
             <h3>Sign up for our Newsletter</h3>
             <p>Tell us what books you love.</p>
           </div>
           <div class="text-center mx-5 mt-5">
-            <button id="banner-btn" class="btn">Sign In</button>
+            <a id="banner-btn" class="btn" href="/signUpPage/signUP.html">
+              Sign Up
+            </a>
           </div>
         </div>
       </section>
       <!-- banner -->
     </main>
 
-    
+    <!-- footer -->
+    <footer>
+      <section>
+        <div
+          class="container d-lg-flex justify-content-around align-items-center Footer"
+        >
+          <div
+            class="trustPilotAndVerify d-flex justify-content-center align-items-center flex-column"
+          >
+            <!-- trustPilotlogo -->
+            <div class="svg my-5">
+              <svg
+                height="-437"
+                viewBox="20.5 248.5 600 147.3"
+                width="400"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m178.2 300.7h60.7v11.3h-23.9v63.7h-13.1v-63.7h-23.8zm58.1 20.7h11.2v10.5h.2c.4-1.5 1.1-2.9 2.1-4.3s2.2-2.7 3.7-3.8c1.4-1.2 3-2.1 4.8-2.8 1.7-.7 3.5-1.1 5.3-1.1 1.4 0 2.4.1 2.9.1.5.1 1.1.2 1.6.2v11.5c-.8-.2-1.7-.3-2.6-.4s-1.7-.2-2.6-.2c-2 0-3.9.4-5.7 1.2s-3.3 2-4.7 3.5c-1.3 1.6-2.4 3.5-3.2 5.8s-1.2 5-1.2 8v25.8h-12zm86.8 54.3h-11.8v-7.6h-.2c-1.5 2.8-3.7 4.9-6.6 6.6s-5.9 2.5-8.9 2.5c-7.1 0-12.3-1.7-15.5-5.3-3.2-3.5-4.8-8.9-4.8-16v-34.5h12v33.3c0 4.8.9 8.2 2.8 10.1 1.8 2 4.4 3 7.7 3 2.5 0 4.6-.4 6.3-1.2s3.1-1.8 4.1-3.1c1.1-1.3 1.8-2.9 2.3-4.7s.7-3.8.7-5.9v-31.5h12v54.3zm20.4-17.4c.4 3.5 1.7 5.9 4 7.4 2.3 1.4 5.1 2.1 8.3 2.1 1.1 0 2.4-.1 3.8-.3s2.8-.5 4-1c1.3-.5 2.3-1.2 3.1-2.2s1.2-2.2 1.1-3.7-.6-2.8-1.7-3.8-2.4-1.7-4-2.4c-1.6-.6-3.5-1.1-5.6-1.5s-4.2-.9-6.4-1.4-4.4-1.1-6.5-1.8-3.9-1.6-5.6-2.9c-1.6-1.2-3-2.7-3.9-4.6-1-1.9-1.5-4.1-1.5-6.9 0-3 .7-5.4 2.2-7.4 1.4-2 3.3-3.6 5.5-4.8s4.7-2.1 7.4-2.6 5.3-.7 7.7-.7c2.8 0 5.5.3 8 .9s4.9 1.5 6.9 2.9c2.1 1.3 3.8 3.1 5.1 5.2 1.4 2.1 2.2 4.7 2.6 7.7h-12.5c-.6-2.9-1.9-4.8-3.9-5.8-2.1-1-4.4-1.5-7.1-1.5-.8 0-1.9.1-3 .2-1.2.2-2.2.4-3.3.8-1 .4-1.9 1-2.6 1.7s-1.1 1.7-1.1 2.9c0 1.5.5 2.6 1.5 3.5s2.3 1.6 4 2.3c1.6.6 3.5 1.1 5.6 1.5s4.3.9 6.5 1.4 4.3 1.1 6.4 1.8 4 1.6 5.6 2.9c1.6 1.2 3 2.7 4 4.5s1.5 4.1 1.5 6.7c0 3.2-.7 5.9-2.2 8.2-1.5 2.2-3.4 4.1-5.7 5.5s-5 2.4-7.8 3.1c-2.9.6-5.7 1-8.5 1-3.4 0-6.6-.4-9.5-1.2s-5.5-2-7.6-3.5c-2.1-1.6-3.8-3.5-5-5.9-1.2-2.3-1.9-5.1-2-8.4h12.1v.1zm39.5-36.9h9.1v-16.4h12v16.3h10.8v8.9h-10.8v29c0 1.3.1 2.3.2 3.3.1.9.4 1.7.7 2.3.4.6 1 1.1 1.7 1.4.8.3 1.8.5 3.2.5.8 0 1.7 0 2.5-.1s1.7-.2 2.5-.4v9.3c-1.3.2-2.6.3-3.9.4-1.3.2-2.5.2-3.9.2-3.2 0-5.7-.3-7.6-.9s-3.4-1.5-4.5-2.6c-1.1-1.2-1.8-2.6-2.2-4.3s-.6-3.8-.7-6v-32h-9.1v-9.1zm40.3 0h11.3v7.4h.2c1.7-3.2 4-5.4 7-6.8s6.2-2.1 9.8-2.1c4.3 0 8 .7 11.2 2.3 3.2 1.5 5.8 3.5 7.9 6.2 2.1 2.6 3.7 5.7 4.7 9.2s1.6 7.3 1.6 11.2c0 3.7-.5 7.2-1.4 10.6-1 3.4-2.4 6.5-4.3 9.1s-4.3 4.7-7.3 6.3-6.4 2.4-10.4 2.4c-1.7 0-3.5-.2-5.2-.5s-3.4-.8-5-1.5-3.1-1.6-4.4-2.7c-1.4-1.1-2.5-2.4-3.4-3.8h-.2v27.1h-12v-74.4zm41.9 27.2c0-2.4-.3-4.8-1-7.1-.6-2.3-1.6-4.3-2.9-6.1s-2.9-3.2-4.7-4.3c-1.9-1.1-4.1-1.6-6.5-1.6-5 0-8.8 1.7-11.4 5.2-2.5 3.5-3.8 8.2-3.8 14 0 2.8.3 5.3 1 7.6s1.6 4.3 3 6c1.3 1.7 2.9 3 4.8 4s4 1.5 6.5 1.5c2.8 0 5-.6 6.9-1.7s3.4-2.6 4.7-4.3c1.2-1.8 2.1-3.8 2.6-6.1.5-2.4.8-4.7.8-7.1zm21.1-47.9h12v11.3h-12zm0 20.7h12v54.3h-12zm22.7-20.7h12v75h-12zm48.6 76.5c-4.3 0-8.2-.7-11.6-2.2s-6.2-3.4-8.6-5.9c-2.3-2.5-4.1-5.6-5.3-9.1s-1.9-7.4-1.9-11.5.6-7.9 1.9-11.4c1.2-3.5 3-6.5 5.3-9.1 2.3-2.5 5.2-4.5 8.6-5.9s7.3-2.2 11.6-2.2 8.2.7 11.6 2.2c3.4 1.4 6.2 3.4 8.6 5.9 2.3 2.5 4.1 5.6 5.3 9.1s1.9 7.3 1.9 11.4c0 4.2-.6 8-1.9 11.5s-3 6.5-5.3 9.1c-2.3 2.5-5.2 4.5-8.6 5.9s-7.2 2.2-11.6 2.2zm0-9.5c2.6 0 5-.6 6.9-1.7 2-1.1 3.5-2.6 4.8-4.4s2.2-3.9 2.8-6.1c.6-2.3.9-4.6.9-7 0-2.3-.3-4.6-.9-6.9s-1.5-4.3-2.8-6.1-2.9-3.2-4.8-4.3c-2-1.1-4.3-1.7-6.9-1.7s-5 .6-6.9 1.7c-2 1.1-3.5 2.6-4.8 4.3-1.3 1.8-2.2 3.8-2.8 6.1s-.9 4.6-.9 6.9c0 2.4.3 4.7.9 7s1.5 4.3 2.8 6.1 2.9 3.3 4.8 4.4c2 1.2 4.3 1.7 6.9 1.7zm31-46.3h9.1v-16.4h12v16.3h10.8v8.9h-10.8v29c0 1.3.1 2.3.2 3.3.1.9.4 1.7.7 2.3.4.6 1 1.1 1.7 1.4.8.3 1.8.5 3.2.5.8 0 1.7 0 2.5-.1s1.7-.2 2.5-.4v9.3c-1.3.2-2.6.3-3.9.4-1.3.2-2.5.2-3.9.2-3.2 0-5.7-.3-7.6-.9s-3.4-1.5-4.5-2.6c-1.1-1.2-1.8-2.6-2.2-4.3s-.6-3.8-.7-6v-32h-9.1v-9.1z"
+                />
+                <path
+                  d="m164.2 300.7h-54.9l-16.9-52.2-17 52.2-54.9-.1 44.4 32.3-17 52.2 44.4-32.3 44.4 32.3-16.9-52.2z"
+                  fill="#00b67a"
+                />
+                <path d="m123.6 344.7-3.8-11.8-27.4 19.9z" fill="white" />
+              </svg>
+            </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-      crossorigin="anonymous"
-    ></script>
+            <img
+              src="https://rails-assets-us.bookshop.org/assets/ClimateNeutralLabelCertifiedHorizontalWhiteOutline-17ebe1222195c2028711dcd4eb05d8ef1d83ad6f315c9f4445fa69fc570bfff2.png"
+              alt=""
+              class="mx-auto d-block"
+            />
+          </div>
+
+          <div class="text-center fs-6">
+            <p>About</p>
+            <p>support and help</p>
+            <p>Become an Affiliate</p>
+            <p>Gift Card</p>
+            <p>BookShop.Org for Authors</p>
+            <p>BookShop.Org for BookStore</p>
+            <p>Creer We hiring</p>
+            <p>Indiebound-Bookshop.Org ChangeOver FQA</p>
+            <p>Contact</p>
+            <p>Return And Refund Policy</p>
+          </div>
+
+          <div id="paymentAndSocialMedia" class="text-center">
+            <span><p>Follow us</p></span>
+
+            <img
+              src="https://rails-assets-us.bookshop.org/assets/icon-x-06f2c6421bcff972e6d6da324504104da14c947623f367be696d63f47a0ea451.svg"
+              alt=""
+            />
+            <img
+              src="https://rails-assets-us.bookshop.org/assets/icon-facebook-573255ba1a893bcc1b0e26d5bb3d26e29950e72079360d7b58e6ca1aa628757c.svg"
+              alt=""
+            />
+            <img
+              src="https://rails-assets-us.bookshop.org/assets/icon-instagram-015ea6b8500fb243a606a5117772f949603f9d035d5ab677b7d24a6f379e3cbe.svg"
+              alt=""
+            />
+            <img
+              src="https://rails-assets-us.bookshop.org/assets/icon-threads-eaa5b4d30197b051e856f3476f6280ad90f0a34ec53cc090da4824a7f34713c8.svg"
+              alt=""
+            />
+            <img
+              src="https://rails-assets-us.bookshop.org/assets/icon-tiktok-f258edd439a6a0ff0def1987359fab63825f9204e5cc105aad9ec2f4e731340a.svg"
+              alt=""
+            />
+            <span><p>Payment</p></span>
+            <img
+              src="https://rails-assets-us.bookshop.org/assets/payment_methods-a0a4f59e2dde1469a5f84fa9a6462171db755cdb0dcdf8ce8bd2dc8ecb6fa03f.png"
+              alt=""
+            />
+            <img
+              src="https://rails-assets-us.bookshop.org/assets/bcorp_logo-dbd633d3bd3540edec0d2271427738792bd79e1aae13585deec0b658d29ddc08.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

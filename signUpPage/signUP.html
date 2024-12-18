@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books Store</title>
+    <!-- link google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Reddit+Sans+Condensed:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link google font -->
+
+    
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- link icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- link icon -->
+
+    <!-- link csss -->
+    <link rel="stylesheet" href="app.css" />
+    <!-- link csss -->
+    <link rel="icon" href="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487">
+
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <header>
+            <!-- Main Navbar (First Row) -->
+            <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid">
+                <!-- Brand Logo -->
+                <a class="navbar-brand flex-grow-1 ps-4 logo" href="/BookStorefile/bookstore.html">
+                  <img
+                    width="200"
+                    src="https://rails-assets-us.bookshop.org/ds/images/logo.041f4577edde0efff6b67907832d4c3dfd52407b.svg"
+                    alt=""
+                  />
+                </a>
+      
+                <!-- Search Bar -->
+      
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <form class="d-flex mx-auto flex-grow-1" style="width: 10%">
+                    <input
+                      class="form-control me-2 search-bar"
+                      type="search"
+                      placeholder="Search for anything"
+                      aria-label="Search"
+                      style="border-radius: 25px"
+                    />
+                    <button class="btn btn-outline-success" type="submit">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </form>
+                </div>
+      
+                <div
+                  class="d-flex flex-grow-1 justify-content-center ms-5 link-sign-in-up"
+                >
+                  <a href="/signUpPage/signUP.html" class="nav-link">Sign Up</a>
+                  <a href="/LoginPageFile/login.html" class="nav-link ms-3"
+                    >Sign In</a
+                  >
+                  <a href="" class="nav-link ms-3"
+                    ><i class="fa-solid fa-cart-shopping" style="color: #63e6be"></i
+                  ></a>
+                </div>
+              </div>
+            </nav>
+      
+                  <!-- Second Row (Categories List) with Offcanvas -->
+                  <div class="navbar" id="second-link-nav-bar">
+                    <div class="container">
+                      <button
+                        class="navbar-toggler d-lg-none ms-3"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                      >
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+            
+                      <form
+                        class="d-flex mx-auto flex-grow-1 d-lg-none form-input-second-row"
+                      >
+                        <input
+                          class="form-control"
+                          type="search"
+                          placeholder="Search for anything"
+                          aria-label="Search"
+                        />
+                        <button class="btn btn-outline-success" type="submit">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </form>
+            
+                      <div
+                        class="offcanvas offcanvas-start full-screen-offcanvas"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                      >
+                        <div class="offcanvas-header">
+                          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                            BookStore
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                          <!-- Offcanvas Categories List -->
+                          <ul
+                            class="flex-column navbar-nav justify-content-end flex-grow-1 pe-3"
+                            id="offcanvas-body"
+                          >
+                            <li class="nav-item">
+                              <a class="nav-link" href="#newBook">New Book</a>
+                            </li>
+                            <li class="nav-item dropdown dropdown-on-small-screen">
+                              <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                id="dropdownMenuButton"
+                                >Spacial Offers</a
+                              >
+                              <ul
+                                class="dropdown-menu"
+                                aria-labelledby="dropdownMenuButton"
+                              >
+                                <li>
+                                  <a class="dropdown-item" href="#"
+                                    >See all Special Offers</a
+                                  >
+                                </li>
+                                <li>
+                                  <a class="dropdown-item" href="#"
+                                    >Great New Title from DK-15%</a
+                                  >
+                                </li>
+            
+                                <li>
+                                  <a href="" class="dropdown-item"
+                                    >Get 15% off STKILLER Picture Books!</a
+                                  >
+                                </li>
+                                <li>
+                                  <a href="" class="dropdown-item"
+                                    >Get 10% off these Disney Books!</a
+                                  >
+                                </li>
+                              </ul>
+                            </li>
+            
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Tales for kids</a>
+                            </li>
+            
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Paperback</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Fiction</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Music</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Sponsor</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Funny Book</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+            
+                      <!-- reugalr categories visible on large screens -->
+                      <div
+                        class="d-none d-lg-flex justify-content-center flex-grow-1 listCard-item"
+                        id="link-nav-bar-on-big-screen"
+                      >
+                        <ul class="nav">
+                          <li class="nav-item">
+                            <a class="nav-link text-dark" href="#newBook">New Book</a>
+                          </li>
+            
+                          <li class="nav-item dropdown dropdown-on-big-screen">
+                            <a
+                              class="nav-link dropdown-toggle"
+                              href="#"
+                              role="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                              id="dropdownMenuButton"
+                              >Spacial Offers</a
+                            >
+                            <ul
+                              class="dropdown-menu"
+                              aria-labelledby="dropdownMenuButton"
+                              id="dropdown-menu"
+                            >
+                              <li>
+                                <a class="dropdown-item" href="#">See all Special Offers</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  >Great New Title from DK-15%</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  >Get 15% off these manga if you like these Netflix
+                                  Shows!</a
+                                >
+                              </li>
+                              <li>
+                                <a href="" class="dropdown-item"
+                                  >Get 15% off STKILLER Picture Books!</a
+                                >
+                              </li>
+                              <li>
+                                <a href="" class="dropdown-item"
+                                  >Get 10% off these Disney Books!</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+            
+                          <li class="nav-item">
+                            <a class="nav-link" href="#TalesForKid">Tales for kids</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#paperback">Paperback</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Fiction</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#container-music">Music</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#sponsor">Sponsor</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#funnyBook">Funny Book</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div
+                    class="text-center flex-grow-1 d-sm-none d-lg-block pt-2 text-promotion"
+                  >
+                    <p>Buy 30$ worth of books get <span>30% </span>off right now</p>
+                  </div>
+    </header>
+    <!-- navbar -->
+
+    <main>
+      <div class="container login-Container">
+        <form>
+          <div class="miniLogoWithText form-group Logo text-center">
+            <img
+              src="https://images-production.bookshop.org/spree/curators/avatars/10/thumb/Bookshop.org_B_Circle_Logo.png?1710255487"
+              alt=""
+            />
+            <p class="">Welcome to BookStore</p>
+          </div>
+
+
+          <div class="form-group input mb-2">
+            <label for="InputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group input mb-2">
+            <label for="InputPassword1">Password</label>           
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <!-- <small id="emailHelp" class="form-text text-muted">Forget your Password?</small> -->
+          </div>
+          <div class="form-group input mb-2">
+            <label for="InputPassWord">Conform PassWord</label>
+            <input type="password" class="form-control" id="exampleInputPassWord" aria-describedby="emailHelp" placeholder="conform password">
+          </div>
+         
+          <div  div class="form-group">
+            <button class="btn btn-info form-control">Sign UP</button>
+          </div>
+
+          <div class="form-group text-xl-center Or-text">
+            <p>OR</p>
+          </div>
+
+          <div class="form-group ">
+            <button class="btn btn-info form-control google-button"> Contiue with Facebook</button>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-info form-control mt-3 facebook-button"> Contiue with Google</button>
+          </div>
+          <!-- <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div> -->
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        </form>
+      </div> 
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

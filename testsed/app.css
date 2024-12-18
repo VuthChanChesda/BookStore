@@ -1,0 +1,135 @@
+/* Reset padding for all elements */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+#second-link-nav-bar {
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+}
+
+#link-nav-bar-on-big-screen a {
+  color: #000;
+  text-decoration: none;
+}
+.full-screen-offcanvas{
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 90% !important;
+  max-height: 100% !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+}
+
+.dropdown-on-big-screen:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-on-big-screen > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+.dropdown-on-small-screen{
+  display: block;
+  position: relative;
+}
+
+.listCard-item a {
+  font-weight: 400;
+  margin: 0px 0px -3px;
+  font-style: sans-serif;
+  padding-bottom: 15px;
+}
+.listCard-item a:hover {
+  border-bottom: 3px solid purple;
+}
+
+
+#dropdown-menu{
+  position: absolute;
+  left: 40%;
+  transform: translateX(-60%);
+  display: none !important;
+
+}
+
+.link-sign-in-up a{
+  color: #000;
+  margin-left: -30px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+@media screen and (max-width: 600px) {
+
+
+  .logo img{
+    width: 145px;
+  }
+  .toggler-button{
+    margin-left: 20px;
+    margin-right: -16px;
+  }
+
+  .form-input-second-row input{
+    width : 75%;
+    margin: 0 auto;
+  }
+}
+
+
+@media screen and (max-width: 390px) {
+
+
+  .logo img{
+    width: 120px;
+  }
+  .toggler-button{
+    margin-left: 20px;
+    margin-right: -16px;
+  }
+
+  .form-input-second-row input{
+    width : 75%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .logo img {
+    width: 100px; /* Adjust the width as needed */
+  }
+  .toggler-button {
+    margin-left: 15px;
+    margin-right: -10px;
+  }
+  .form-input-second-row input {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto;
+  }
+  /* Add any additional styles specific to iPhone SE size here */
+}
+
+
+  /* Add any additional styles specific to Samsung Galaxy Fold (Folded) size here */
+  @media screen and (max-width: 280px) {
+    .logo img {
+      width: 80px; /* Adjust the width as needed */
+    }
+    .toggler-button {
+      margin-left: 10px;
+      margin-right: -5px;
+    }
+    .form-input-second-row input {
+      width: 10%; /* Adjust the width as needed */
+      margin: 0 auto;
+    }
+    /* Add any additional styles specific to Samsung Galaxy Fold (Folded) size here */
+  }
+
+
+

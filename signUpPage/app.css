@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* Navbar */
+/* Reset padding for all elements */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+#second-link-nav-bar {
+  border-bottom: 1px solid gray;
+  padding-bottom: 3px;
+}
+
+#link-nav-bar-on-big-screen a {
+  color: #000;
+  text-decoration: none;
+}
+.full-screen-offcanvas{
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 90% !important;
+  max-height: 100% !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+}
+
+.dropdown-on-big-screen:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-on-big-screen > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+.dropdown-on-small-screen{
+  display: block;
+  position: relative;
+}
+
+.listCard-item a {
+  font-weight: 400;
+  margin: 0px 0px -3px;
+  font-style: sans-serif;
+  padding-bottom: 15px;
+}
+.listCard-item a:hover {
+  border-bottom: 3px solid purple;
+}
+
+
+.link-sign-in-up a{
+  color: #000;
+  margin-left: -30px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+
+#text{
+  font-size: 1.6rem;
+  margin-bottom: -7px;
+  font-weight: bold;
+}
+
+.text-promotion span {
+  font-size: 1.2rem;
+  color: rgb(187, 24, 187); 
+}
+.text-promotion p{
+  font-size: 1rem;
+  
+  color: black;
+}
+
+#offcanvas-body li{
+ border-bottom: 1px solid rgb(187, 184, 184);
+
+}
+
+
+
+
+
+
+
+
+  .login-Container{
+    width: 30%;
+    background-color: white;
+    padding-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .login-Container .input {
+    width: 80%;
+    margin: auto;
+  }
+  .login-Container button {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+
+
+  .login-Container button {
+    background-color: rgb(75, 10, 136);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+
+
+
+  .miniLogoWithText img{
+    width: 65px;
+  }
+
+  .miniLogoWithText p{
+    font-size: 2em;
+    font-weight: 500;
+    color: black;
+    margin-bottom: -10px;
+  }
+
+  .Logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+  }
+
+  .Or-text{
+    text-align: center;
+    font-size: 1em;
+    margin: 5px 0 -22px 0;
+    color: gray;
+  }
+
+
+
+   .google-button{
+    background-image: url(/img/download.png);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: 10px 7px;
+    /* padding: 10px 0px 10px 40px; */
+   }
+
+   .facebook-button{
+    background-image: url(/img/facebook.png);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: 10px 7px;
+    /* padding: 10px 0px 10px 40px; */
+   }
+
+
+   @media screen and (max-width: 1300px) {
+
+    svg{
+      width: 100%;
+      margin: 0 auto;
+    }
+    .svg{
+      width: 50%;
+      margin: 0 auto;
+    }
+  
+    .logo img{
+      width: 145px;
+    }
+    .toggler-button{
+      margin-left: 20px;
+      margin-right: -16px;
+    }
+  
+    .form-input-second-row input{
+      width : 75%;
+      margin: 0 auto;
+    }
+
+    .login-Container{
+      width: 90%;
+   
+    }
+
+  
+  
+  }
+  
+  @media screen and (max-width: 400px) {
+  
+    .logo img{
+      width: 90px;
+    }
+
+    .login-Container{
+      width: 100%;
+   
+    }
+
+
+  
+  
+  }
